@@ -1,0 +1,29 @@
+#container-div {
+    font-family: Arial, sans-serif;
+}
+
+span {
+    background-color: #09FB98;
+    font-size: 3rem;
+}
+
+img{
+    position: relative;
+}
+
+#vertical {
+    background-color: blue;
+    color: #FFFFFF;
+}
+
+
+#horizontal {
+
+    background-color: yellow;
+}
+
+.button_stuff {
+    position: relative;
+}
+
+
