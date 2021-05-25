@@ -1,13 +1,66 @@
 #container-div {
     font-family: Arial, sans-serif;
+    background-image: url('./Images/alumni.jpg');
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
+
+}
+#navBar{
+    font-size: large;
+    background-color: #bf8f8f ;
+    padding: 10px ;
+    border: 1px solid red;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+#formBox {
+    background-color: #cfc ;
+    padding: 10px ;
+    border: 1px solid green ;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#cardBoxContainer {;
+    background-color: #ccfffb;
+    padding: 10px ;
+    border: 1px solid blue ;
+    margin-right: 10%;
+    margin-left: 10%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#cardBox {;
+
+}
+
+#cardBox img{
+    width: 30%;
+    position: relative;
+    padding-right: 10%;
+    padding-left: 10%;
+    top: 0;
+    left: 0;
+}
+
+#cardBox h1{
+    padding-top: 10%;
+}
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
 span {
-    background-color: #09FB98;
+    background-color: #09cbfb;
     font-size: 3rem;
 }
 
-img{
+img {
     position: relative;
 }
 
@@ -26,4 +79,7 @@ img{
     position: relative;
 }
 
+div {
+    text-align: center;
+}
 

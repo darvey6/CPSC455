@@ -2,29 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 
-<body>
+
+<body onload=load()>
 <script src="index.js"></script>
+
 <div id="container-div">
+    <div id="navBar">
+        <nav>
+            | <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+        </nav>
+    </div>
 
     <p>
-        <span>Hello!</span>
+        <span>
+            <a id="typeWriterEnter" href="about.html"></a>
+        </span>
     </p>
 
-    <img id='picture' src="https://www.thehappycatsite.com/wp-content/uploads/2017/12/grow.jpg" alt="Test_Kitten" width="200px">
-    <div>
-
-        <button id="vertical" class="button_stuff" onclick="moveVertical();">
-            Vertical Cat
-        </button>
-
-        <button id="horizontal" class="button_stuff" onclick="moveHorizontal();">
-            Horizontal Cat
-        </button>
+    <div id="formBox">
+        <form id="inputForm">
+            <label for="inputName">
+                <input id="inputName" type="text" placeholder="Name" name="name">
+            </label>
+            <label>
+                <input id="inputURL" type="text" placeholder="Image URL" name="imageURL">
+            </label>
+            <button onclick=clearInput() type="button">Clear Input Fields</button>
+            <button id="addButton" onclick=add() type="button">Add</button>
+        </form>
     </div>
+
+    <div id="cardBoxContainer" >
+        <button id="delete" onclick=deleteCards() type="button">Delete All</button>
+        <div id="cardBox">
+        </div>
+    </div>
+
 </div>
+
 </body>
 </html>
