@@ -32,7 +32,7 @@ let txt = 'Welcome';
 let speed = 125;
 
 let data = '[{"name":"beach", "url":"./Images/beach.jpg"}, {"name":"fountain", "url":"./Images/fountain.jpg"}]';
-const obj = JSON.parse(JSON.parse(JSON.stringify(data)));
+const obj = JSON.parse(data);
 let nameText;
 let h1;
 let img;
