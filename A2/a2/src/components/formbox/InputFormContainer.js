@@ -1,19 +1,34 @@
-import InputForm from "./InputForm";
-import Button from "./Button";
-import {useState} from "react";
+import React from 'react';
+import './InputFormContainer.css';
+import FromInputs from './FromInputs';
 
-function InputFormContainer() {
-
+const InputFormContainer = ({
+                                name,
+                                setName,
+                                rating,
+                                setRating,
+                                url,
+                                setURL,
+                                isEdit,
+                                clearInput,
+                                handleAddOrEditClick,
+                            }) => {
     return (
-        <form id="inputForm">
-            <label>
-                <InputForm id={"inputName"} placeholder={"Name"}/>
-                <InputForm id={"inputURL"} placeholder={"Image URL"} />
-            </label>
-            <Button>Clear Input Fields</Button>
-            <Button>Add</Button>
-        </form>
-    )
-}
+        <div className="URLHeader">
+            <h1>Welcome</h1>
+            <FromInputs
+                name={name}
+                setName={setName}
+                rating={rating}
+                setRating={setRating}
+                url={url}
+                setURL={setURL}
+                isEdit={isEdit}
+                clearInput={clearInput}
+                handleAddOrEditClick={handleAddOrEditClick}
+            />
+        </div>
+    );
+};
 
 export default InputFormContainer;
