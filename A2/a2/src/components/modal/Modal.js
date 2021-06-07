@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 
 //Code taken from: https://upmostly.com/tutorials/modal-components-react-custom-hooks

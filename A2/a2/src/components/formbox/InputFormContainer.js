@@ -1,6 +1,6 @@
-import React from 'react';
-import './InputFormContainer.css';
-import FromInputs from './FromInputs';
+import React from "react";
+import "./InputFormContainer.css";
+import FromInputs from "./FromInputs";
 
 const InputFormContainer = ({
                                 name,

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 //Code taken from: https://upmostly.com/tutorials/modal-components-react-custom-hooks
 const useModal = () => {

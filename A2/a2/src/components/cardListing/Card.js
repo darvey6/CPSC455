@@ -1,8 +1,8 @@
-import React from 'react';
-import CardDetail from './CardDetail';
-import CardImage from './CardImage';
-import CardName from './CardName';
-import CardRating from './CardRating';
+import React from "react";
+import CardDetail from "./CardDetail";
+import CardImage from "./CardImage";
+import CardName from "./CardName";
+import CardRating from "./CardRating";
 
 const Card = ({data, handleEditClick, handleDeleteClick, handleShowDetails}) => {
     return (

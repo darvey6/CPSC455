@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const FromInputs = ({
                         isEdit,
@@ -11,7 +11,7 @@ const FromInputs = ({
                         clearInput,
                         handleAddOrEditClick,
                     }) => {
-    const buttonContent = isEdit ? 'Change' : 'Add';
+    const buttonContent = isEdit ? "Change" : "Add";
     return (
         <div>
             <div className="inputGroup">

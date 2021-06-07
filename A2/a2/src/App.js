@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
-import './App.css';
-import InputFormContainer from './components/formBox/InputFormContainer';
-import CardListing from './components/cardListing/CardListing';
-import Modal from "./components/modal/Modal";
-import useModal from "./components/modal/useModal";
+import React, {useState} from "react";
+import "./App.css";
+import InputFormContainer from "./components/formBox/InputFormContainer";
+import CardListing from "./components/cardListing/CardListing";
 
 function App() {
     const initialState = [
         {
-            name: 'Dog',
-            url: 'https://bit.ly/3wYpGB0',
+            name: "Dog",
+            url: "https://bit.ly/3wYpGB0",
             rating: 4,
-            id: '1',
+            id: "1",
         },
         {
-            name: 'Cat',
-            url: 'https://bit.ly/3wS7au6',
+            name: "Cat",
+            url: "https://bit.ly/3wS7au6",
             rating: 2,
-            id: '2',
+            id: "2",
         },
         {
             name: "Rocket",
@@ -27,11 +25,12 @@ function App() {
         }
     ];
 
+
     const [listings, setListings] = useState(initialState);
     const [isEdit, setIsEdit] = useState(false);
-    const [name, setName] = useState('');
-    const [rating, setRating] = useState('');
-    const [url, setURL] = useState('');
+    const [name, setName] = useState("");
+    const [rating, setRating] = useState("");
+    const [url, setURL] = useState("");
     const [currentListing, setCurrentListing] = useState({});
 
     const handleEditClick = (e) => {
@@ -52,9 +51,9 @@ function App() {
 
     const clearInput = () => {
         setIsEdit(false);
-        setName('');
-        setRating('');
-        setURL('');
+        setName("");
+        setRating("");
+        setURL("");
         setCurrentListing({});
     };
 
@@ -75,6 +74,7 @@ function App() {
                 id: Math.floor(Math.random() * 101).toLocaleString(),
             };
             addListing(newListing);
+
         }
         clearInput();
     };
@@ -108,7 +108,7 @@ function App() {
                 handleAddOrEditClick={handleAddOrEditClick}
             />
             {listings.length === 0 && (
-                <h2 style={{paddingTop: 10, textAlign: 'center'}}>No Results</h2>
+                <h2 style={{paddingTop: 10, textAlign: "center"}}>No Results</h2>
             )}
             <CardListing
                 listings={listings}
