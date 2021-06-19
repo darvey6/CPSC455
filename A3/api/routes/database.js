@@ -25,8 +25,5 @@ router.get("/", function(req, res, next) {
 res.json(initialState);
 });
 
-router.post('/', function(req, res) {
-    res.send('POST handler for /dogs route.');
-});
 
 module.exports = router;

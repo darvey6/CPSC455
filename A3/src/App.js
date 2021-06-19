@@ -1,30 +1,24 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./App.css";
 import InputFormContainer from "./components/formbox/InputFormContainer";
 import CardListing from "./components/cardListing/CardListing";
 
 function App() {
-    const initialState = [
-        {
-            name: "Dog",
-            url: "https://bit.ly/3wYpGB0",
-            rating: 4,
-            id: "1",
-        },
-        {
-            name: "Cat",
-            url: "https://bit.ly/3wS7au6",
-            rating: 2,
-            id: "2",
-        },
-        {
-            name: "Rocket",
-            url: "https://media.istockphoto.com/vectors/rocket-launch-vector-illustration-isolated-on-white-vector-id876037616?k=6&m=876037616&s=612x612&w=0&h=souIgzQ2Yj43H1cffpAI4nwa3KUvseD7am6ovPsao8c=",
-            rating: 5,
-            id: "3"
-        }
-    ];
+    const initialState = [];
 
+    const fetchData = () => {
+        fetch('http://localhost:9000/database', {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(response => setListings(response))
+            .then(response =>console.log(response))
+            .catch((err) => console.log('error'))
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
 
     const [listings, setListings] = useState(initialState);
     const [isEdit, setIsEdit] = useState(false);
@@ -47,6 +41,15 @@ function App() {
             (listing) => listing.id !== e.target.value
         );
         setListings(newListings);
+        fetch('http://localhost:9000/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(listings),
+        }).then(() =>{
+            console.log("deleted listings");
+        })
     };
 
     const clearInput = () => {
@@ -85,11 +88,52 @@ function App() {
                 listing.id === currentListing.id ? newListing : listing
             )
         );
+        fetch('http://localhost:9000/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newListing),
+        }).then(() =>{
+            console.log("Edited listings");
+        })
     };
 
     const addListing = (newListing) => {
         setListings([newListing, ...listings]);
+        fetch('http://localhost:9000/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newListing),
+        }).then(() =>{
+            console.log("added listings");
+        })
     };
+
+    // const addCard = () => {
+    //     fetch('http://localhost:9000/testAPI', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             name,
+    //             url,
+    //             rating: rating,
+    //             id: Math.floor(Math.random() * 101).toLocaleString(),
+    //         }),
+    //     })
+    //         .then((res) => res.json())
+    //         .then((result) => setData(result.rows))
+    //         .catch((err) => console.log('error'))
+    // }
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault()
+    //     addCard() // Save games when form is submitted
+    // }
 
     const handleShowDetails = (e) => {
     }
