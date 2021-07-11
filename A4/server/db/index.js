@@ -1,8 +1,8 @@
 
 const mongoose = require('mongoose')
-
+const uri = require("./uri")
 mongoose
-    .connect('mongodb://127.0.0.1:27017/cards', { useNewUrlParser: true,
+    .connect(uri, { useNewUrlParser: true,
         useUnifiedTopology: true })
     .catch(e => {
         console.error('Connection error', e.message)
